@@ -92,5 +92,25 @@ public class MyLinkedList<K>
 		
 		return listSize;
 	}
+	public INodeIF<K> pop()
+	{
+		if(head==tail)
+		{
+			INodeIF<K> tempNode= head;
+			this.head=null;
+			this.tail=null;
+			return tempNode;  
+		}
+		else
+		{
+			INodeIF<K> tempNode=head;
+			this.head=head.getNext();
+			
+			return tempNode;
+			
+			
+		}
+		
+	}
 
 }
