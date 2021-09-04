@@ -14,6 +14,24 @@ public class MyLinkedList<K>
 		
 	}
 	
+	public void  addNode(INodeIF<K> newNode)
+	{
+		if(this.tail==null)
+		{
+			this.tail=newNode;
+		}
+		if(this.head==null)
+		{
+			this.head=newNode;
+		}
+		else
+		{
+			INodeIF<K> tempNode=this.head;
+			this.head=newNode;
+			this.head.setNext(tempNode);
+		}
+		
+	}
 	
 	
 
