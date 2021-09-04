@@ -52,6 +52,14 @@ public class MyLinkedList<K>
 		
 		
 	}
+	public void insertAfterGivenNode(INodeIF<K> myNode,INodeIF<K> newNode)
+	{
+		INodeIF<K> tempNode=myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+		
+		
+	}
 	
 	
 
