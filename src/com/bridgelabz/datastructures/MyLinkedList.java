@@ -112,5 +112,33 @@ public class MyLinkedList<K>
 		}
 		
 	}
+	public INodeIF<K> popLast()
+	{
+		if(head==tail)
+		{
+			INodeIF<K> tempNode= head;
+			this.head=null;
+			this.tail=null;
+			return tempNode; 
+		}
+		else
+		{
+			INodeIF<K> tempNode= head;
+			while(tempNode.getNext()!=tail)
+			{
+				
+				tempNode=tempNode.getNext();
+				
+			}
+			
+			this.tail=tempNode;
+			tempNode=tempNode.getNext();
+			this.tail.setNext(null);
+			return tempNode;
+			
+		}
+		
+		
+	}
 
 }
