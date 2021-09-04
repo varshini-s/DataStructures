@@ -103,4 +103,90 @@ public class MyOrderedList<K extends Comparable<K>>
 		
 	}
 	
+	public INodeIF<K> deleteGivenKeyNode(K key)
+	{
+		return linkedlist.deleteGivenKeyNode(key);
+		
+	}
+	
+	public INodeIF<K> pop()
+	{
+		
+		INodeIF<K> tempNode= linkedlist.head;
+		while(tempNode.getNext()!=linkedlist.tail)
+		{
+			
+			tempNode=tempNode.getNext();
+			
+		}
+		this.linkedlist.tail=tempNode;
+		this.linkedlist.tail.setNext(null);
+		tempNode=tempNode.getNext();
+		return tempNode;
+		
+	}
+	
+	public int size()
+	{ 
+		return linkedlist.size();
+	}
+
+	public boolean isEmpty()
+	{
+		return linkedlist.isEmpty();
+		
+	}
+	
+	public int findIndex(K key)
+	{
+		int index=0;
+		
+		INodeIF<K> tempNode = linkedlist.head;
+
+		while(tempNode.getNext()!=null && tempNode.getKey()!=key)
+		{
+			
+			tempNode=tempNode.getNext();
+
+			index++;
+		}
+		if(tempNode.getKey()==key)
+		{
+			return index;
+		}
+		else
+			return -1;
+		
+		
+		
+		
+	}
+	
+	public INodeIF<K> search(K key)
+	{
+
+		return linkedlist.search(key);
+		
+	}
+	
+	public INodeIF<K> remove(K key)
+	{
+		
+		 return linkedlist.deleteGivenKeyNode(key);
+		
+		
+	}
+	
+	public String toString()
+	{
+		return linkedlist.toString();
+	}
+	
+	
+	public void  printMyNodes()
+	{
+		
+		linkedlist.printMyNodes();
+	}
+	
 }
