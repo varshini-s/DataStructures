@@ -190,5 +190,32 @@ public class MyLinkedList<K>
 		
 		
 	}
+	
+	
+	
+	public void  printMyNodes()
+	{
+		 System.out.println("My nodes: "+ head);
+	}
+	
+	@Override
+	public String toString()
+	{
+		
+		return "MyLinkedListNodes{"+ head+'}';
+	}
+	public boolean isEmpty()
+	{
+		if(head==null || tail==null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
 
 }
