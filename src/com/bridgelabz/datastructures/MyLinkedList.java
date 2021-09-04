@@ -166,5 +166,29 @@ public class MyLinkedList<K>
 		return tempNode;
 		
 	}
+	public INodeIF<K> search(K key)
+	{
+		INodeIF<K> tempNode = head;
+		INodeIF<K> requiredNode=null;
+		if(tempNode!=null)
+		{
+			while( (tempNode.getNext()!=null) && (tempNode.getKey().equals(key)==false))
+			{
+				
+				
+				tempNode=tempNode.getNext();
+			}
+			if(tempNode.getKey().equals(key))
+			{
+				requiredNode=tempNode;
+			}
+			
+		}
+			
+			
+		return requiredNode;
+		
+		
+	}
 
 }
