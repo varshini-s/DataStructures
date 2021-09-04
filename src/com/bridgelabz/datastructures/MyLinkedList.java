@@ -61,6 +61,21 @@ public class MyLinkedList<K>
 		
 	}
 	
+	public void insertAfterGivenKey(K key,INodeIF<K> newNode)
+	{
+		
+		INodeIF<K> tempNode=search(key);
+		if(tempNode==this.tail)
+		{
+			appendNode(newNode);
+		}
+		else
+		{
+			newNode.setNext(tempNode.getNext());
+			tempNode.setNext(newNode);
+		}
+		
+	}
 	
 
 }
