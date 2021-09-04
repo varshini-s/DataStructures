@@ -140,5 +140,31 @@ public class MyLinkedList<K>
 		
 		
 	}
+	public INodeIF<K> deleteGivenKeyNode(K key)
+	{
+		INodeIF<K> tempNode=search(key);
+		
+		if(tempNode==head)
+		{
+			tempNode=pop();
+		}
+		else if(tempNode==tail)
+		{
+			tempNode=popLast();
+		}
+		else
+		{
+			INodeIF<K> previousNode=head;
+			while(previousNode.getNext()!=tempNode)
+			{
+				previousNode=previousNode.getNext();
+			}
+			
+			previousNode.setNext(tempNode.getNext());
+			
+		}
+		return tempNode;
+		
+	}
 
 }
