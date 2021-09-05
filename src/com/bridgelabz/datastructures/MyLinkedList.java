@@ -204,6 +204,7 @@ public class MyLinkedList<K>
 		
 		return "MyLinkedListNodes{"+ head+'}';
 	}
+	
 	public boolean isEmpty()
 	{
 		if(head==null || tail==null)
@@ -214,6 +215,38 @@ public class MyLinkedList<K>
 		{
 			return false;
 		}
+		
+	}
+	
+	public int getIndex(K key)
+	{
+		int index=0;
+		INodeIF<K> tempNode = head;
+		INodeIF<K> requiredNode=null;
+		if(tempNode!=null)
+		{
+			while( (tempNode.getNext()!=null) && (tempNode.getKey().equals(key)==false))
+			{
+				
+				
+				tempNode=tempNode.getNext();
+				index++;
+				
+			}
+			if(tempNode.getKey().equals(key))
+			{
+				requiredNode=tempNode;
+				
+			}
+			if(requiredNode==null)
+			{
+				return -1;
+			}
+		
+			
+		}
+		return index;
+		
 		
 	}
 	
