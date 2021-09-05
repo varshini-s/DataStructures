@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructures;
 
-public class MyNode<K extends Comparable<K>> implements INodeIF<K>
+public class MyNode<K> implements INodeIF<K>
 
 {
 	
